@@ -7,12 +7,221 @@
     <link rel="icon" type="image/png" href="/public/ugma-logo.png"/>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles/pages/login.css">
+    <link rel="stylesheet" href="/styles/pages/home.css">
 
-    <title>Lobby Educativo - UGMA Laboratorio LAN</title>
-  </head>
-  <body>
-    <h1>hola</h1>
-    <a href="/views/login.html">Login</a>
-  </body>
+    <title>Inicio - Servicio Comunitario UGMA</title>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <img src="public/ugma-logo.png" alt="UGMA Logo">
+                    </div>
+                    
+                    <div class="header-title">
+                        <h1>Servicio Comunitario</h1>
+                        <p>Universidad Gran Mariscal de Ayacucho</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#" class="active">Inicio</a></li>
+                        <li><a href="#">Galería de Proyectos</a></li>
+                        <li><a href="#">Centro de Información</a></li>
+                        <li><a href="#">Documentos</a></li>
+                        <li><a href="/views/login.html" class="nav-cta">Iniciar Sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Plataforma Digital de Orientación al Servicio Comunitario</h1>
+            <p>Centralizamos la información normativa y procedimental para optimizar la comunicación entre la Coordinación de Servicio Comunitario y el estudiantado de la UGMA, Puerto Ordaz.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="downloadBtn">
+                    <i class="fas fa-download"></i> Descargar Planilla
+                </button>
+                <button class="btn btn-secondary" id="projectsBtn">
+                    <i class="fas fa-images"></i> Ver Proyectos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="quick-access container">
+        <div class="section-title">
+            <h2>Accesos Rápidos</h2>
+            <p>Encuentra rápidamente los recursos y herramientas que necesitas para tu servicio comunitario</p>
+        </div>
+        
+        <div class="access-cards">
+            <div class="access-card" id="legalFrameworkCard">
+                <div class="access-icon">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <h3>Marco Legal</h3>
+                <p>Consulta la Ley de Servicio Comunitario, reglamentos internos y definiciones institucionales que regulan el proceso.</p>
+                <button class="btn btn-outline">
+                    <i class="fas fa-book"></i> Explorar
+                </button>
+            </div>
+            
+            <div class="access-card" id="downloadsCard">
+                <div class="access-icon">
+                    <i class="fas fa-file-download"></i>
+                </div>
+                <h3>Descargas</h3>
+                <p>Accede a documentación estandarizada como guías de informes y planillas de control de horas para tu servicio.</p>
+                <button class="btn btn-outline">
+                    <i class="fas fa-download"></i> Descargar
+                </button>
+            </div>
+            
+            <div class="access-card" id="galleryCard">
+                <div class="access-icon">
+                    <i class="fas fa-photo-video"></i>
+                </div>
+                <h3>Galería de Proyectos</h3>
+                <p>Inspírate con evidencias fotográficas y descriptivas de proyectos exitosos de semestres anteriores.</p>
+                <button class="btn btn-outline">
+                    <i class="fas fa-eye"></i> Ver Galería
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Sections -->
+    <section class="info-sections container">
+        <div class="section-title">
+            <h2>Información del Sistema</h2>
+            <p>Conoce las funcionalidades y objetivos de nuestra plataforma digital</p>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-header">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Objetivo Principal</h3>
+                </div>
+                <p>Centralizar la información normativa y procedimental para facilitar el acceso remoto de los estudiantes a recursos críticos para su servicio comunitario.</p>
+                <ul>
+                    <li>Acceso a Ley de Servicio Comunitario</li>
+                    <li>Consulta de reglamentos internos</li>
+                    <li>Definiciones institucionales</li>
+                    <li>Documentación estandarizada</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-card-header">
+                    <i class="fas fa-tools"></i>
+                    <h3>Funcionalidades</h3>
+                </div>
+                <p>Nuestra plataforma ofrece diversas herramientas para facilitar el proceso de servicio comunitario para estudiantes y coordinadores.</p>
+                <ul>
+                    <li>Gestor de descargas de documentación</li>
+                    <li>Galería digital de proyectos exitosos</li>
+                    <li>Acceso a guías de informes</li>
+                    <li>Planillas de control de horas</li>
+                    <li>Información normativa actualizada</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-card-header">
+                    <i class="fas fa-university"></i>
+                    <h3>Beneficios UGMA</h3>
+                </div>
+                <p>La plataforma contribuye a la optimización del proceso de servicio comunitario en la Universidad Gran Mariscal de Ayacucho.</p>
+                <ul>
+                    <li>Fomenta la continuidad de experiencias</li>
+                    <li>Mejora la comunicación estudiante-coordinación</li>
+                    <li>Centraliza recursos en un solo lugar</li>
+                    <li>Facilita el acceso remoto a información</li>
+                    <li>Promueve proyectos comunitarios exitosos</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+
+                <div class="footer-column">
+                    <h3>Servicio Comunitario UGMA</h3>
+                    <p>Plataforma digital de orientación al servicio comunitario para la Universidad Gran Mariscal de Ayacucho, Puerto Ordaz.</p>
+                    <div style="margin-top: 15px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent-blue);"></i>
+                            <span>Av. Universidad, Puerto Ordaz, Estado Bolívar</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-phone" style="color: var(--accent-blue);"></i>
+                            <span>(0286) 999-9999</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Galería de Proyectos</a></li>
+                        <li><a href="#">Centro de Información</a></li>
+                        <li><a href="#">Documentos</a></li>
+                        <li><a href="#">Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="#">Reglamento Interno de la Ley SC</a></li>
+                        <li><a href="#">Lineamientos Generales del SC</a></li>
+                        <li><a href="#">Planillas de Control de Horas</a></li>
+                        <li><a href="#">Guía de Elaboración de Informes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p>Para más información sobre el servicio comunitario, contacta a la coordinación:</p>
+                    <div style="margin-top: 15px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <i class="fas fa-envelope" style="color: var(--accent-blue);"></i>
+                            <span>servicio.comunitario@ugma.edu.ve</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-clock" style="color: var(--accent-blue);"></i>
+                            <span>Lunes a Viernes: 8:00 AM - 4:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2025 Universidad Gran Mariscal de Ayacucho (UGMA). Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/pages/home.js"></script>
+</body>
 </html>

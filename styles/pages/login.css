@@ -9,7 +9,7 @@
     --primary-light: #f8fafc;
     --secondary-light: #f1f5f9;
     --card-light: #ffffff;
-    --accent-yellow: #f6c90e;
+    --accent-yellow: #e4af00;
     --accent-blue: #0d4da1;
     --accent-green: #0a7c4d;
     --accent-red: #dc3545;
@@ -88,11 +88,11 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: color 0.3s;
+    transition: all 0.3s;
 }
 
 .back-home:hover {
-    color: var(--accent-green);
+    color: var(--accent-yellow);
 }
 
 /* Main Content */
@@ -265,48 +265,6 @@ body {
 
 .password-toggle:hover {
     color: var(--accent-blue);
-}
-
-/* Form Options */
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-}
-
-.checkbox-container input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--accent-blue);
-    cursor: pointer;
-}
-
-.checkbox-container label {
-    color: var(--text-dark);
-    font-size: 0.9rem;
-    cursor: pointer;
-    user-select: none;
-}
-
-.forgot-password {
-    color: var(--accent-blue);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.forgot-password:hover {
-    color: var(--accent-green);
-    text-decoration: underline;
 }
 
 /* Buttons */
