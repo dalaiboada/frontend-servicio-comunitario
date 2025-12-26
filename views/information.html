@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/pages/information.css">
+
+    <link rel="icon" type="image/png" href="../public/ugma-logo.png"/>
+    
+    <title>Centro de Información Institucional - Servicio Comunitario UGMA</title>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <img src="../public/ugma-logo.png" alt="UGMA Logo">
+                    </div>
+
+                    <div class="header-title">
+                        <h1>Servicio Comunitario</h1>
+                        <p>Universidad Gran Mariscal de Ayacucho</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="descargas.html">Galería de Proyectos</a></li>
+                        <li><a href="#" class="active">Centro de Información</a></li>
+                        <li><a href="galeria.html">Documentos</a></li>
+                        <li><a href="login.html" class="nav-cta">Iniciar Sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Centro de Información Institucional</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Sidebar Tabs -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h2>Centro de Información</h2>
+                    <p>Todo sobre el Servicio Comunitario</p>
+                </div>
+                
+                <nav class="tabs">
+                    <a href="#definicion" class="tab active" data-tab="definicion">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Definición de SC</span>
+                    </a>
+                    <a href="#marco-legal" class="tab" data-tab="marco-legal">
+                        <i class="fas fa-balance-scale"></i>
+                        <span>Marco Legal</span>
+                    </a>
+                    <a href="#reglamento" class="tab" data-tab="reglamento">
+                        <i class="fas fa-book"></i>
+                        <span>Reglamento Interno</span>
+                    </a>
+                    <a href="#roles" class="tab" data-tab="roles">
+                        <i class="fas fa-users"></i>
+                        <span>Roles y Responsabilidades</span>
+                    </a>
+                </nav>
+            </aside>
+            
+            <!-- Content Area -->
+            <main class="content-area">
+                <div class="content-header">
+                    <div class="content-title">
+                        <i class="fas fa-info-circle" id="contentIcon"></i>
+                        <h1 id="contentTitle">Definición de Servicio Comunitario</h1>
+                    </div>
+                    
+                    <div class="content-actions">
+                        <button class="btn btn-outline" id="printBtn">
+                            <i class="fas fa-print"></i> Imprimir
+                        </button>
+                        <button class="btn btn-primary" id="exportBtn">
+                            <i class="fas fa-download"></i> Exportar PDF
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="content-body" id="contentBody">
+                    <!-- Definición de SC -->
+                    <div id="definicion-content" class="tab-content active">
+                        <div class="definition-section">
+                            <div class="definition-header">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h2>¿Qué es el Servicio Comunitario?</h2>
+                            </div>
+                            <div class="definition-content">
+                                <p>El Servicio Comunitario en la <strong>Universidad Gran Mariscal de Ayacucho (UGMA)</strong> es una actividad académica obligatoria que deben realizar los estudiantes de pregrado, como requisito para obtener el título de educación superior.</p>
+                                
+                                <div class="highlight-box">
+                                    <p><strong>Definición legal:</strong> "El servicio comunitario es la actividad que deben desarrollar en las comunidades los estudiantes de educación superior que cursen estudios de formación profesional, aplicando los conocimientos científicos, técnicos, culturales, deportivos y humanísticos adquiridos durante su formación académica, en beneficio de la comunidad, para cooperar con su participación al cumplimiento de los fines del bienestar social, de acuerdo con lo establecido en la Constitución de la República Bolivariana de Venezuela y en esta Ley." (Art. 4, Ley de Servicio Comunitario del Estudiante de Educación Superior)</p>
+                                </div>
+                                
+                                <p>En la UGMA, el servicio comunitario constituye un espacio de interacción entre la universidad y la sociedad, que permite a los estudiantes aplicar sus conocimientos en la solución de problemas concretos de las comunidades, fortaleciendo así su formación integral y su compromiso social.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="definition-section">
+                            <div class="definition-header">
+                                <i class="fas fa-bullseye"></i>
+                                <h2>Objetivos del Servicio Comunitario</h2>
+                            </div>
+                            <div class="definition-content">
+                                <p>El servicio comunitario en la UGMA tiene como objetivos principales:</p>
+                                
+                                <ul>
+                                    <li><strong>Formar ciudadanos comprometidos:</strong> Fomentar en el estudiante la solidaridad y el compromiso con la comunidad como norma ética y ciudadana.</li>
+                                    <li><strong>Vincular universidad-sociedad:</strong> Establecer vínculos efectivos entre la universidad y las comunidades para contribuir al desarrollo local y nacional.</li>
+                                    <li><strong>Aplicar conocimientos:</strong> Permitir al estudiante aplicar los conocimientos adquiridos durante su formación académica en la solución de problemas concretos de la comunidad.</li>
+                                    <li><strong>Desarrollar competencias:</strong> Desarrollar en el estudiante habilidades y destrezas que complementen su formación integral.</li>
+                                    <li><strong>Contribuir al bienestar social:</strong> Cooperar con la participación universitaria al cumplimiento de los fines del bienestar social.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="definition-section">
+                            <div class="definition-header">
+                                <i class="fas fa-check-circle"></i>
+                                <h2>Características Principales</h2>
+                            </div>
+                            <div class="definition-content">
+                                <p>El servicio comunitario en la UGMA se caracteriza por:</p>
+                                
+                                <ol>
+                                    <li><strong>Ser obligatorio:</strong> Es un requisito académico para la obtención del título de educación superior.</li>
+                                    <li><strong>No ser remunerado:</strong> No genera relación laboral alguna entre el estudiante y la comunidad, institución u organización beneficiaria.</li>
+                                    <li><strong>Tener duración específica:</strong> Comprende la ejecución de 120 horas académicas, las cuales deben cumplirse en un período no menor de tres (3) meses ni mayor de seis (6) meses.</li>
+                                    <li><strong>Ser extracurricular:</strong> Se realiza fuera del horario regular de clases del estudiante.</li>
+                                    <li><strong>Tener evaluación:</strong> El desempeño del estudiante es evaluado por un tutor académico y un representante de la comunidad beneficiaria.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Marco Legal -->
+                    <div id="marco-legal-content" class="tab-content">
+                        <div class="definition-section">
+                            <div class="definition-header">
+                                <i class="fas fa-balance-scale"></i>
+                                <h2>Marco Legal del Servicio Comunitario</h2>
+                            </div>
+                            <div class="definition-content">
+                                <p>El servicio comunitario en Venezuela se rige por un conjunto de instrumentos legales que establecen su naturaleza, objetivos, organización y procedimientos. A continuación se presentan los principales documentos legales:</p>
+                                
+                                <div class="pdf-viewer-container">
+                                    <div class="pdf-viewer-header">
+                                        <h3>Ley de Servicio Comunitario del Estudiante de Educación Superior</h3>
+                                        <div class="pdf-actions">
+                                            <button class="btn btn-outline btn-sm" id="viewLawPdf">
+                                                <i class="fas fa-expand"></i> Ver Completo
+                                            </button>
+                                            <button class="btn btn-primary btn-sm" id="downloadLawPdf">
+                                                <i class="fas fa-download"></i> Descargar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="pdf-placeholder">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <h3>Ley de Servicio Comunitario</h3>
+                                        <p>Documento PDF - 850 KB</p>
+                                        <p style="margin-top: 15px;">Para visualizar el documento completo, haga clic en "Ver Completo" o "Descargar"</p>
+                                    </div>
+                                    <!-- En implementación real: <iframe class="pdf-viewer" src="docs/ley-servicio-comunitario.pdf"></iframe> -->
+                                </div>
+                                
+                                <div class="pdf-download-info">
+                                    <i class="fas fa-info-circle"></i>
+                                    <div class="pdf-download-details">
+                                        <h4>Información sobre el documento</h4>
+                                        <p><strong>Publicado:</strong> 14 de Septiembre de 2005</p>
+                                        <p><strong>Actualizado:</strong> 12 de Marzo de 2023</p>
+                                        <p><strong>Contenido:</strong> Establece los principios, definiciones, derechos, deberes y procedimientos del servicio comunitario para estudiantes de educación superior en Venezuela.</p>
+                                    </div>
+                                </div>
+                                
+                                <h3 style="margin-top: 30px; color: var(--accent-blue);">Otros Instrumentos Legales Relevantes</h3>
+                                
+                                <ul>
+                                    <li><strong>Constitución de la República Bolivariana de Venezuela (1999):</strong> Establece en su artículo 135 el deber de toda persona de prestar servicio a la comunidad.</li>
+                                    <li><strong>Ley Orgánica de Educación (2009):</strong> Define la educación como un derecho humano y un deber social fundamental.</li>
+                                    <li><strong>Reglamento de la Ley de Servicio Comunitario:</strong> Desarrolla los aspectos procedimentales de la ley.</li>
+                                    <li><strong>Resoluciones del Ministerio del Poder Popular para la Educación Universitaria:</strong> Normativas específicas para la implementación del servicio comunitario.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Reglamento Interno -->
+                    <div id="reglamento-content" class="tab-content">
+                        <div class="definition-section">
+                            <div class="definition-header">
+                                <i class="fas fa-book"></i>
+                                <h2>Reglamento Interno de Servicio Comunitario UGMA</h2>
+                            </div>
+                            <div class="definition-content">
+                                <p>La Universidad Gran Mariscal de Ayacucho cuenta con un Reglamento Interno que establece las normas, procedimientos y directrices específicas para la ejecución del servicio comunitario por parte de sus estudiantes.</p>
+                                
+                                <div class="pdf-viewer-container">
+                                    <div class="pdf-viewer-header">
+                                        <h3>Reglamento Interno de Servicio Comunitario - UGMA</h3>
+                                        <div class="pdf-actions">
+                                            <button class="btn btn-outline btn-sm" id="viewRegulationPdf">
+                                                <i class="fas fa-expand"></i> Ver Completo
+                                            </button>
+                                            <button class="btn btn-primary btn-sm" id="downloadRegulationPdf">
+                                                <i class="fas fa-download"></i> Descargar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="pdf-placeholder">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <h3>Reglamento Interno UGMA</h3>
+                                        <p>Documento PDF - 1.2 MB</p>
+                                        <p style="margin-top: 15px;">Para visualizar el documento completo, haga clic en "Ver Completo" o "Descargar"</p>
+                                    </div>
+                                    <!-- En implementación real: <iframe class="pdf-viewer" src="docs/reglamento-servicio-comunitario-ugma.pdf"></iframe> -->
+                                </div>
+                                
+                                <div class="pdf-download-info">
+                                    <i class="fas fa-info-circle"></i>
+                                    <div class="pdf-download-details">
+                                        <h4>Información sobre el documento</h4>
+                                        <p><strong>Publicado:</strong> 15 de Enero de 2018</p>
+                                        <p><strong>Actualizado:</strong> 10 de Agosto de 2023</p>
+                                        <p><strong>Contenido:</strong> Establece las normas internas de la UGMA para la planificación, ejecución, control y evaluación del servicio comunitario.</p>
+                                    </div>
+                                </div>
+                                
+                                <h3 style="margin-top: 30px; color: var(--accent-blue);">Contenido Principal del Reglamento</h3>
+                                
+                                <ol>
+                                    <li><strong>Disposiciones generales:</strong> Objeto, alcance y definiciones.</li>
+                                    <li><strong>Organización y estructura:</strong> Comisión de Servicio Comunitario, coordinadores, tutores.</li>
+                                    <li><strong>Procedimientos:</strong> Inscripción, asignación de proyectos, ejecución, control y evaluación.</li>
+                                    <li><strong>Derechos y deberes:</strong> De estudiantes, tutores, comunidades e instituciones.</li>
+                                    <li><strong>Documentación:</strong> Formatos, planillas, informes y certificaciones.</li>
+                                    <li><strong>Disposiciones finales:</strong> Casos especiales, equivalencias y acreditaciones.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Roles y Responsabilidades -->
+                    <div id="roles-content" class="tab-content">
+                        <div class="definition-section">
+                            <div class="definition-header">
+                                <i class="fas fa-users"></i>
+                                <h2>Roles y Responsabilidades en el Servicio Comunitario</h2>
+                            </div>
+                            <div class="definition-content">
+                                <p>El servicio comunitario involucra a diversos actores, cada uno con responsabilidades específicas en el proceso. A continuación se detallan los roles principales:</p>
+                                
+                                <div class="roles-table-container">
+                                    <table class="roles-table">
+                                        <thead>
+                                            <tr>
+                                                <th width="25%">Rol</th>
+                                                <th width="35%">Responsabilidades</th>
+                                                <th width="20%">Requisitos</th>
+                                                <th width="20%">Documentación</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="role-header">
+                                                        <div class="role-icon">
+                                                            <i class="fas fa-user-graduate"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="role-name">Estudiante</div>
+                                                            <div style="font-size: 0.85rem; color: var(--text-muted);">Ejecutor principal</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <ul class="responsibilities-list">
+                                                        <li>Ejecutar las 120 horas de servicio</li>
+                                                        <li>Cumplir con el cronograma establecido</li>
+                                                        <li>Elaborar informes parciales y final</li>
+                                                        <li>Participar activamente en el proyecto</li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul class="responsibilities-list">
+                                                        <li>Haber aprobado el 50% de la carga académica</li>
+                                                        <li>No tener asignaturas pendientes del primer año</li>
+                                                        <li>Inscribirse oportunamente</li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul class="responsibilities-list">
+                                                        <li>Planilla de inscripción</li>
+                                                        <li>Cronograma de actividades</li>
+                                                        <li>Informes de avance</li>
+                                                        <li>Informe final</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="role-header">
+                                                        <div class="role-icon">
+                                                            <i class="fas fa-chalkboard-teacher"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="role-name">Tutor Académico</div>
+                                                            <div style="font-size: 0.85rem; color: var(--text-muted);">Docente UGMA</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <ul class="responsibilities-list">
+                                                        <li>Orientar al estudiante en el proyecto</li>
+                                                        <li>Supervisar la ejecución del servicio</li>
+                                                        <li>Evaluar el desempeño del estudiante</li>
+                                                        <li>Validar las horas cumplidas</li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul class="responsibilities-list">
+                                                        <li>Ser docente de la UGMA</li>
+                                                        <li>Tener experiencia en proyectos comunitarios</li>
+                                                        <li>Asistir a capacitaciones</li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul class="responsibilities-list">
+                                                        <li>Ficha de asignación</li>
+                                                        <li>Informes de supervisión</li>
+                                                        <li>Evaluación final</li>
+                                                        <li>Certificación de horas</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="role-header">
+                                                        <div class="role-icon">
+                                                            <i class="fas fa-user-tie"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="role-name">Coordinador de SC</div>
+                                                            <div style="font-size: 0.85rem; color: var(--text-muted);">Por carrera/facultad</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <ul class="responsibilities-list">
+                                                        <li>Gestionar proyectos comunitarios</li>
+                                                        <li>Asignar tutores a estudiantes</li>
+                                                        <li>Organizar actividades de formación</li>
+                                                        <li>Mantener registros actualizados</li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul class="responsibilities-list">
+                                                        <li>Ser docente de tiempo completo</li>
+                                                        <li>Experiencia en gestión comunitaria</li>
+                                                        <li>Conocimiento de normativas</li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul class="responsibilities-list">
+                                                        <li>Registro de proyectos</li>
+                                                        <li>Actas de asignación</li>
+                                                        <li>Reportes estadísticos</li>
+                                                        <li>Memoria anual</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="role-header">
+                                                        <div class="role-icon">
+                                                            <i class="fas fa-hands-helping"></i>
+                                                        </div>
+                                                        <div>
+                                                            <div class="role-name">Comunidad Beneficiaria</div>
+                                                            <div style="font-size: 0.85rem; color: var(--text-muted);">Representante</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <ul class="responsibilities-list">
+                                                        <li>Participar en la planificación</li>
+                                                        <li>Facilitar condiciones para el servicio</li>
+                                                        <li>Evaluar el desempeño del estudiante</li>
+                                                        <li>Validar la utilidad del proyecto</li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul class="responsibilities-list">
+                                                        <li>Ser organización legalmente constituida</li>
+                                                        <li>Tener necesidades reales detectadas</li>
+                                                        <li>Disponer de un representante</li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul class="responsibilities-list">
+                                                        <li>Carta de aceptación</li>
+                                                        <li>Evaluación del estudiante</li>
+                                                        <li>Constancia de participación</li>
+                                                        <li>Informe de impacto</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <h3 style="margin-top: 30px; color: var(--accent-blue);">Flujo de Responsabilidades</h3>
+                                
+                                <div class="highlight-box">
+                                    <p><strong>Proceso secuencial:</strong> El servicio comunitario sigue un flujo secuencial donde cada rol cumple funciones específicas en momentos determinados:</p>
+                                    <ol>
+                                        <li><strong>Coordinación:</strong> Identifica proyectos y asigna estudiantes.</li>
+                                        <li><strong>Tutor:</strong> Planifica y supervisa la ejecución.</li>
+                                        <li><strong>Estudiante:</strong> Ejecuta las actividades planificadas.</li>
+                                        <li><strong>Comunidad:</strong> Recibe el servicio y evalúa resultados.</li>
+                                        <li><strong>Coordinación:</strong> Certifica y archiva la documentación.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="ugma-logo" style="width: 50px; height: 50px; font-size: 18px;">UGMA</div>
+                    <div class="footer-logo-text">
+                        <h3>Servicio Comunitario UGMA</h3>
+                        <p>Centro de Información Institucional</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="index.html">Inicio</a>
+                    <a href="descargas.html">Descargas</a>
+                    <a href="galeria.html">Galería</a>
+                    <a href="login.html">Acceso Coordinadores</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; 2024 Universidad Gran Mariscal de Ayacucho (UGMA) - Puerto Ordaz. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/pages/information.js"></script>
+</body>
+</html>
