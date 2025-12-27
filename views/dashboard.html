@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/pages/dashboard.css">
+
+    <link rel="icon" type="image/png" href="../public/ugma-logo.png"/>
+
+    <title>Gestor de Proyectos - Servicio Comunitario UGMA</title>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <img src="../public/ugma-logo.png" alt="UGMA Logo">
+                    </div>
+
+                    <div class="header-title">
+                        <h1>Servicio Comunitario</h1>
+                        <p>Universidad Gran Mariscal de Ayacucho</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="information.html">Centro de Información</a></li>
+                        <li><a href="documents.html" class="active">Documentos</a></li>
+                        <li><a href="projects.html">Galería de Proyectos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Gestor de Proyectos</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="page-title">
+                <h1>Gestor de Proyectos</h1>
+                <p>Administra los proyectos de servicio comunitario de la UGMA. Crea, edita, visualiza y elimina proyectos según sea necesario.</p>
+            </div>
+            <div>
+                <button class="btn btn-primary" id="newProjectBtn">
+                    <i class="fas fa-plus"></i> Nuevo Proyecto
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-cards">
+            <div class="stat-card">
+                <div class="stat-icon total">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="totalProjects">0</h3>
+                    <p>Proyectos Totales</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Table -->
+        <div class="data-table-container">
+            <!-- Table Header -->
+            <div class="table-header">
+                <div class="table-title">
+                    <i class="fas fa-table"></i>
+                    <h2>Lista de Proyectos</h2>
+                </div>
+                
+                <div class="table-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Buscar proyectos...">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="projects-table">
+                    <thead>
+                        <tr>
+                            <th width="80px"><i class="fas fa-hashtag"></i> ID</th>
+                            <th><i class="fas fa-heading"></i> Título del Proyecto</th>
+                            <th width="120px"><i class="fas fa-calendar-alt"></i> Periodo</th>
+                            <th width="120px"><i class="fas fa-users"></i> Estudiantes</th>
+                            <th width="120px"><i class="fas fa-calendar"></i> Fecha</th>
+                            <th width="150px"><i class="fas fa-cogs"></i> Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projectsTableBody">
+                        <!-- Los proyectos se cargarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <i class="fas fa-project-diagram"></i>
+                <h3>No hay proyectos registrados</h3>
+                <p>Comienza creando tu primer proyecto de servicio comunitario haciendo clic en el botón "Nuevo Proyecto".</p>
+                <button class="btn btn-primary" id="createFirstProjectBtn">
+                    <i class="fas fa-plus"></i> Crear Primer Proyecto
+                </button>
+            </div>
+            
+            <!-- Table Footer -->
+            <div class="table-footer">
+                <div class="pagination-info" id="paginationInfo">
+                    Mostrando 0 de 0 proyectos
+                </div>
+                
+                <div class="pagination" id="pagination">
+                    <!-- Los botones de paginación se generarán dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para eliminar proyecto -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-trash-alt"></i> Confirmar Eliminación</h3>
+                <button class="modal-close" id="closeDeleteModal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <p class="modal-message" id="deleteModalMessage">
+                    ¿Está seguro que desea eliminar el proyecto "<span id="deleteProjectTitle"></span>"?
+                </p>
+                <p style="color: var(--accent-red); font-weight: 500; margin-top: 15px;">
+                    <i class="fas fa-exclamation-triangle"></i> Advertencia: Esta acción eliminará permanentemente el proyecto y todas sus evidencias fotográficas asociadas. No se puede deshacer.
+                </p>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn btn-outline" id="cancelDeleteBtn">Cancelar</button>
+                <button class="btn btn-danger" id="confirmDeleteBtn">
+                    <i class="fas fa-trash-alt"></i> Eliminar Proyecto
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal mejorado para nuevo/editar proyecto -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> <span id="modalTitle">Nuevo Proyecto</span></h3>
+                <button class="modal-close" id="closeProjectModal">&times;</button>
+            </div>
+            
+            <div class="steps-indicator">
+                <div class="step active" data-step="1">
+                    <div class="step-icon">1</div>
+                    <div class="step-label">Información Básica</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-icon">2</div>
+                    <div class="step-label">Miembros</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-icon">3</div>
+                    <div class="step-label">Archivos</div>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <form id="projectForm">
+                    <!-- Paso 1: Información básica -->
+                    <div class="step-content active" data-step="1">
+                        <h3 class="step-title"><i class="fas fa-info-circle"></i> Información del Proyecto</h3>
+                        <p class="step-description">Complete la información básica del proyecto de servicio comunitario.</p>
+                        
+                        <div class="form-group">
+                            <label for="projectTitle" class="required">Título del Proyecto</label>
+                            <input type="text" class="form-control" id="projectTitle" placeholder="Ej: Reforestación del Parque Central" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="projectDescription" class="required">Descripción</label>
+                            <textarea class="form-control" id="projectDescription" placeholder="Describa los objetivos, actividades y beneficiarios del proyecto..." rows="4" required></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="academicTutor" class="required">Tutor Académico</label>
+                                <input type="text" class="form-control" id="academicTutor" placeholder="Nombre del tutor académico" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="industrialTutor">Tutor Industrial (opcional)</label>
+                                <input type="text" class="form-control" id="industrialTutor" placeholder="Nombre del tutor industrial">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="projectPeriod" class="required">Periodo Académico</label>
+                                <select class="form-control" id="projectPeriod" required>
+                                    <option value="">Seleccione un periodo</option>
+                                    <option value="2025-I">2025-I</option>
+                                    <option value="2024-II">2024-II</option>
+                                    <option value="2024-I">2024-I</option>
+                                    <option value="2023-II">2023-II</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="projectDate" class="required">Fecha de Inicio</label>
+                                <input type="date" class="form-control" id="projectDate" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Paso 2: Miembros -->
+                    <div class="step-content" data-step="2">
+                        <h3 class="step-title"><i class="fas fa-users"></i> Miembros del Proyecto</h3>
+                        <p class="step-description">Agregue los estudiantes que participarán en el proyecto. Puede agregar múltiples miembros.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="memberId" class="required">Cédula</label>
+                                <input type="text" class="form-control" id="memberId" placeholder="Ej: V-25.123.456">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="memberName" class="required">Nombre</label>
+                                <input type="text" class="form-control" id="memberName" placeholder="Nombre del estudiante">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="memberLastName" class="required">Apellido</label>
+                                <input type="text" class="form-control" id="memberLastName" placeholder="Apellido del estudiante">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="memberCareer" class="required">Carrera</label>
+                                <input type="text" class="form-control" id="memberCareer" placeholder="Ej: Ingeniería Civil">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="button" class="btn btn-outline" id="addMemberBtn" style="width: 100%;">
+                                <i class="fas fa-user-plus"></i> Agregar Miembro
+                            </button>
+                        </div>
+                        
+                        <div class="members-list" id="membersList">
+                            <div class="member-item member-item-header">
+                                <div>Cédula</div>
+                                <div>Nombre</div>
+                                <div>Carrera</div>
+                                <div>Acción</div>
+                            </div>
+                            <!-- Los miembros se agregarán aquí dinámicamente -->
+                        </div>
+                    </div>
+                    
+                    <!-- Paso 3: Archivos -->
+                    <div class="step-content" data-step="3">
+                        <h3 class="step-title"><i class="fas fa-file-upload"></i> Documentos y Evidencias</h3>
+                        <p class="step-description">Suba los documentos del proyecto y evidencias fotográficas.</p>
+                        
+                        <div class="form-group">
+                            <label>Documentos del Proyecto (PDF o Word)</label>
+                            <div class="file-upload-area" id="documentUploadArea">
+                                <i class="fas fa-file-alt"></i>
+                                <p>Arrastre y suelte los archivos aquí o haga clic para seleccionar</p>
+                                <div class="file-types">Formatos aceptados: .pdf, .doc, .docx</div>
+                                <input type="file" id="documentInput" multiple accept=".pdf,.doc,.docx" style="display: none;">
+                            </div>
+                            <div class="file-list" id="documentList"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Evidencias Fotográficas</label>
+                            <div class="file-upload-area" id="imageUploadArea">
+                                <i class="fas fa-images"></i>
+                                <p>Arrastre y suelte las imágenes aquí o haga clic para seleccionar</p>
+                                <div class="file-types">Formatos aceptados: .jpg, .jpeg, .png, .gif</div>
+                                <input type="file" id="imageInput" multiple accept="image/*" style="display: none;">
+                            </div>
+                            <div class="images-preview" id="imagesPreview"></div>
+                        </div>
+                    </div>
+                    
+                    <input type="hidden" id="projectId">
+                </form>
+            </div>
+            
+            <div class="modal-actions">
+                <div class="step-counter" id="stepCounter">
+                    Paso <span id="currentStep">1</span> de 3
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-outline" id="prevStepBtn" style="display: none;">
+                        <i class="fas fa-arrow-left"></i> Anterior
+                    </button>
+                    <button class="btn btn-outline" id="cancelProjectBtn">Cancelar</button>
+                    <button class="btn btn-primary" id="nextStepBtn">
+                        Siguiente <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-primary" id="saveProjectBtn" style="display: none;">
+                        <i class="fas fa-save"></i> Guardar Proyecto
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            &copy; 2025 Universidad Gran Mariscal de Ayacucho (UGMA) - Puerto Ordaz. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script type="module" src="../src/pages/dashboard.js"></script>
+</body>
+</html>

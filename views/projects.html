@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/pages/projects.css">
+
+    <link rel="icon" type="image/png" href="../public/ugma-logo.png"/>
+    
+    <title>Galería de Proyectos - Servicio Comunitario UGMA</title>
+    
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <img src="../public/ugma-logo.png" alt="UGMA Logo">
+                    </div>
+
+                    <div class="header-title">
+                        <h1>Servicio Comunitario</h1>
+                        <p>Universidad Gran Mariscal de Ayacucho</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="information.html">Centro de Información</a></li>
+                        <li><a href="documents.html">Documentos</a></li>
+                        <li><a href="projects.html" class="active">Galería de Proyectos</a></li>
+                        <li><a href="login.html" class="nav-cta">Iniciar Sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Galería de Proyectos</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero-gallery">
+        <div class="hero-content">
+            <h1>Galería de Proyectos Exitosos</h1>
+            <p>Explora los proyectos de servicio comunitario más destacados realizados por estudiantes de la UGMA. Una muestra del impacto positivo en nuestra comunidad.</p>
+            <button class="btn btn-outline" id="exploreBtn">
+                <i class="fas fa-images"></i> Explorar Proyectos
+            </button>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="container">
+        <div class="filter-section">
+            <div class="filter-header">
+                <div class="filter-title">
+                    <h2><i class="fas fa-filter"></i> Filtrar Proyectos</h2>
+                </div>
+                
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar proyectos por título, descripción o categoría...">
+                </div>
+            </div>
+            
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="ambiental">Ambiental</button>
+                <button class="filter-btn" data-filter="educacion">Educación</button>
+                <button class="filter-btn" data-filter="salud">Salud</button>
+                <button class="filter-btn" data-filter="infraestructura">Infraestructura</button>
+                <button class="filter-btn" data-filter="tecnologia">Tecnología</button>
+                <button class="filter-btn" data-filter="social">Social</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="container gallery-container">
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Los proyectos se cargarán dinámicamente -->
+        </div>
+        
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <i class="fas fa-image"></i>
+            <h3>No se encontraron proyectos</h3>
+            <p>Intenta con otros términos de búsqueda o selecciona una categoría diferente.</p>
+            <button class="btn btn-primary" id="resetFiltersBtn" style="margin-top: 20px;">
+                <i class="fas fa-redo"></i> Restablecer filtros
+            </button>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="container">
+        <div class="gallery-stats">
+            <h2 style="color: white; margin-bottom: 30px; font-size: 1.8rem;">Impacto de Nuestros Proyectos</h2>
+            <div class="stats-grid">
+                <div class="stat-item-lg">
+                    <div class="stat-value-lg" id="totalProjects">48</div>
+                    <div class="stat-label-lg">Proyectos Realizados</div>
+                </div>
+                <div class="stat-item-lg">
+                    <div class="stat-value-lg" id="beneficiaries">2,500+</div>
+                    <div class="stat-label-lg">Personas Beneficiadas</div>
+                </div>
+                <div class="stat-item-lg">
+                    <div class="stat-value-lg" id="studentHours">12,400</div>
+                    <div class="stat-label-lg">Horas de Servicio</div>
+                </div>
+                <div class="stat-item-lg">
+                    <div class="stat-value-lg" id="communities">32</div>
+                    <div class="stat-label-lg">Comunidades Impactadas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para vista detallada del proyecto -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalProjectTitle">Título del Proyecto</h2>
+                <button class="modal-close" id="closeModalBtn">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-meta">
+                    <div class="modal-info-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span id="modalProjectDate">Fecha</span>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="modalProjectLocation">Ubicación</span>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-users"></i>
+                        <span id="modalProjectStudents">Estudiantes</span>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span id="modalProjectCoordinator">Coordinador</span>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-tag"></i>
+                        <span id="modalProjectCategory">Categoría</span>
+                    </div>
+                </div>
+                
+                <div class="modal-description" id="modalProjectDescription">
+                    Descripción del proyecto...
+                </div>
+                
+                <!-- Visor de imágenes dentro del modal -->
+                <div class="modal-gallery">
+                    <h3><i class="fas fa-images"></i> Galería del Proyecto</h3>
+                    
+                    <div class="image-viewer">
+                        <div class="main-image-container">
+                            <img id="modalMainImage" src="" alt="Proyecto" class="main-image">
+                            <button class="image-nav prev-btn" id="prevImageBtn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="image-nav next-btn" id="nextImageBtn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <div class="image-counter">
+                                <span id="currentImageIndex">1</span> / <span id="totalImages">4</span>
+                            </div>
+                        </div>
+                        
+                        <div class="thumbnails-container">
+                            <div class="thumbnails" id="modalGalleryThumbs">
+                                <!-- Miniaturas se cargarán dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-impact">
+                    <h3><i class="fas fa-chart-line"></i> Impacto Logrado</h3>
+                    <ul id="modalImpactList">
+                        <!-- Impactos se cargarán dinámicamente -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visor de imágenes completo (modal aparte) -->
+    <div class="image-viewer-modal" id="fullImageViewer">
+        <div class="image-viewer-content">
+            <div class="image-viewer-header">
+                <div class="image-viewer-title" id="viewerTitle">Proyecto UGMA</div>
+                <button class="image-viewer-close" id="closeViewerBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="image-viewer-main">
+                <img id="fullSizeImage" src="" alt="Imagen completa">
+                <button class="image-viewer-nav image-viewer-prev" id="viewerPrevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="image-viewer-nav image-viewer-next" id="viewerNextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="image-viewer-counter">
+                    <span id="viewerCurrentIndex">1</span> / <span id="viewerTotalImages">4</span>
+                </div>
+            </div>
+            
+            <div class="image-viewer-footer">
+                <div class="image-viewer-thumbnails" id="viewerThumbnails">
+                    <!-- Miniaturas se cargarán dinámicamente -->
+                </div>
+                
+                <div class="image-viewer-actions">
+                    <button class="image-viewer-action-btn" id="zoomInBtn" title="Acercar">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button class="image-viewer-action-btn" id="zoomOutBtn" title="Alejar">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <button class="image-viewer-action-btn" id="downloadBtn" title="Descargar">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="image-viewer-action-btn" id="fullscreenBtn" title="Pantalla completa">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Galería UGMA</h3>
+                    <p>Exposición visual de proyectos de servicio comunitario exitosos realizados por estudiantes de la Universidad Gran Mariscal de Ayacucho.</p>
+                    <div style="margin-top: 15px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <i class="fas fa-images" style="color: var(--accent-blue);"></i>
+                            <span>Más de 200 fotografías documentadas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categorías Destacadas</h3>
+                    <ul>
+                        <li><a href="#" data-filter="ambiental">Proyectos Ambientales</a></li>
+                        <li><a href="#" data-filter="educacion">Educación Comunitaria</a></li>
+                        <li><a href="#" data-filter="salud">Salud y Bienestar</a></li>
+                        <li><a href="#" data-filter="infraestructura">Infraestructura Comunitaria</a></li>
+                        <li><a href="#" data-filter="tecnologia">Tecnología para Comunidades</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Proyectos Destacados</h3>
+                    <ul>
+                        <li><a href="#" data-id="1">Reforestación Parque Central</a></li>
+                        <li><a href="#" data-id="2">Alfabetización Digital</a></li>
+                        <li><a href="#" data-id="3">Escuela Rural Renovada</a></li>
+                        <li><a href="#" data-id="5">Huertos Comunitarios</a></li>
+                        <li><a href="#" data-id="7">Asesoría Jurídica Gratuita</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Comparte tu Proyecto</h3>
+                    <p>¿Eres estudiante o coordinador y quieres que tu proyecto aparezca en esta galería? Contáctanos:</p>
+                    <div style="margin-top: 15px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <i class="fas fa-envelope" style="color: var(--accent-blue);"></i>
+                            <span>galeria.sc@ugma.edu.ve</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-phone" style="color: var(--accent-blue);"></i>
+                            <span>Ext. 246 - Departamento de Comunicaciones</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2024 Universidad Gran Mariscal de Ayacucho (UGMA). Todos los derechos reservados.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos de Uso</a>
+                    <a href="#">Créditos Fotográficos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../src/pages/projects.js"></script>
+</body>
+</html>

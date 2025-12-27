@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/pages/documents.css">
+
+    <link rel="icon" type="image/png" href="../public/ugma-logo.png"/>
+    
+    <title>Documentos - Servicio Comunitario UGMA</title>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <img src="../public/ugma-logo.png" alt="UGMA Logo">
+                    </div>
+
+                    <div class="header-title">
+                        <h1>Servicio Comunitario</h1>
+                        <p>Universidad Gran Mariscal de Ayacucho</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="information.html">Centro de Información</a></li>
+                        <li><a href="documents.html" class="active">Documentos</a></li>
+                        <li><a href="projects.html">Galería de Proyectos</a></li>
+                        <li><a href="login.html" class="nav-cta">Iniciar Sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Documentos</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Header -->
+    <section class="page-header container">
+        <h1>Documentos</h1>
+        <p>Accede a todos los recursos documentales necesarios para el desarrollo de tu servicio comunitario: guías, planillas, formatos y documentos oficiales de la UGMA.</p>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="container">
+        <div class="search-filter-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar documentos por nombre, descripción o tipo...">
+                </div>
+                <button class="btn btn-primary" id="searchBtn">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+            </div>
+            
+            <div class="filter-options">
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 10px;">Filtrar por categoría:</h3>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="guias">Guías</button>
+                        <button class="filter-btn" data-filter="planillas">Planillas</button>
+                        <button class="filter-btn" data-filter="formatos">Formatos</button>
+                        <button class="filter-btn" data-filter="legales">Documentos Legales</button>
+                        <button class="filter-btn" data-filter="tutoriales">Tutoriales</button>
+                    </div>
+                </div>
+                
+                <div>
+                    <span style="color: var(--text-muted); margin-right: 10px;">Ordenar por:</span>
+                    <select id="sortSelect" style="padding: 8px 15px; border-radius: 8px; border: 1px solid var(--border-color); color: var(--text-dark); background-color: white;">
+                        <option value="name">Nombre (A-Z)</option>
+                        <option value="date">Fecha (Más reciente)</option>
+                        <option value="type">Tipo de documento</option>
+                        <option value="downloads">Más descargados</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="downloads-section container">
+        <div class="section-header">
+            <div class="section-title">
+                <i class="fas fa-file-download"></i>
+                <h2>Documentos Disponibles</h2>
+            </div>
+            <div>
+                <span id="fileCount" style="color: var(--accent-blue); font-weight: 600;">12 documentos encontrados</span>
+            </div>
+        </div>
+        
+        <div class="downloads-grid" id="downloadsGrid">
+            <!-- Los documentos se cargarán dinámicamente -->
+        </div>
+        
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <i class="fas fa-file-search"></i>
+            <h3>No se encontraron documentos</h3>
+            <p>Intenta con otros términos de búsqueda o selecciona una categoría diferente.</p>
+            <button class="btn btn-outline" id="resetFiltersBtn" style="margin-top: 20px;">
+                <i class="fas fa-redo"></i> Restablecer filtros
+            </button>
+        </div>
+    </section>
+
+    <!-- Instructions Section -->
+    <section class="container">
+        <div class="instructions">
+            <div class="instructions-header">
+                <i class="fas fa-question-circle"></i>
+                <h2>Instrucciones para el Uso Correcto de los Documentos</h2>
+            </div>
+            
+            <div class="instructions-content">
+                <div class="instruction-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Descarga el Documento</h3>
+                        <p>Haz clic en el botón "Descargar" del documento que necesites. El archivo se guardará automáticamente en tu dispositivo.</p>
+                    </div>
+                </div>
+                
+                <div class="instruction-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Completa Correctamente</h3>
+                        <p>Llena todos los campos solicitados en los formatos y planillas. Los documentos incompletos no serán aceptados por la coordinación.</p>
+                    </div>
+                </div>
+                
+                <div class="instruction-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Conserva tu Copia</h3>
+                        <p>Guarda una copia digital y una impresa de todos los documentos que entregues como parte de tu servicio comunitario.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+
+                <div class="footer-column">
+                    <h3>Servicio Comunitario UGMA</h3>
+                    <p>Plataforma digital de orientación al servicio comunitario para la Universidad Gran Mariscal de Ayacucho, Puerto Ordaz.</p>
+                    <div style="margin-top: 15px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent-blue);"></i>
+                            <span>Av. Universidad, Puerto Ordaz, Estado Bolívar</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-phone" style="color: var(--accent-blue);"></i>
+                            <span>(0286) 999-9999</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Galería de Proyectos</a></li>
+                        <li><a href="#">Centro de Información</a></li>
+                        <li><a href="#">Documentos</a></li>
+                        <li><a href="#">Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="#">Reglamento Interno de la Ley SC</a></li>
+                        <li><a href="#">Lineamientos Generales del SC</a></li>
+                        <li><a href="#">Planillas de Control de Horas</a></li>
+                        <li><a href="#">Guía de Elaboración de Informes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p>Para más información sobre el servicio comunitario, contacta a la coordinación:</p>
+                    <div style="margin-top: 15px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <i class="fas fa-envelope" style="color: var(--accent-blue);"></i>
+                            <span>servicio.comunitario@ugma.edu.ve</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-clock" style="color: var(--accent-blue);"></i>
+                            <span>Lunes a Viernes: 8:00 AM - 4:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2025 Universidad Gran Mariscal de Ayacucho (UGMA). Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../src/pages/documents.js"></script>
+</body>
+</html>
