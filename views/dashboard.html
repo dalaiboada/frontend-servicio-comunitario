@@ -104,10 +104,10 @@
                 <table class="projects-table">
                     <thead>
                         <tr>
-                            <th width="80px"><i class="fas fa-hashtag"></i> ID</th>
+                            <th width="10px"><i class="fas fa-hashtag"></i> ID</th>
                             <th><i class="fas fa-heading"></i> Título del Proyecto</th>
                             <th width="120px"><i class="fas fa-calendar-alt"></i> Periodo</th>
-                            <th width="120px"><i class="fas fa-users"></i> Estudiantes</th>
+                            <th width="150px"><i class="fas fa-users"></i> Estudiantes</th>
                             <th width="120px"><i class="fas fa-calendar"></i> Fecha</th>
                             <th width="150px"><i class="fas fa-cogs"></i> Acciones</th>
                         </tr>
@@ -123,9 +123,6 @@
                 <i class="fas fa-project-diagram"></i>
                 <h3>No hay proyectos registrados</h3>
                 <p>Comienza creando tu primer proyecto de servicio comunitario haciendo clic en el botón "Nuevo Proyecto".</p>
-                <button class="btn btn-primary" id="createFirstProjectBtn">
-                    <i class="fas fa-plus"></i> Crear Primer Proyecto
-                </button>
             </div>
             
             <!-- Table Footer -->
@@ -146,7 +143,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3><i class="fas fa-trash-alt"></i> Confirmar Eliminación</h3>
-                <button class="modal-close" id="closeDeleteModal">&times;</button>
+                <button class="modal-close" id="closeDeleteModalBtn">&times;</button>
             </div>
             
             <div class="modal-body">
@@ -159,7 +156,7 @@
             </div>
             
             <div class="modal-actions">
-                <button class="btn btn-outline" id="cancelDeleteBtn">Cancelar</button>
+                <button class="btn btn-outline" id="cancelDeleteBtn" style="margin-right: 10px;">Cancelar</button>
                 <button class="btn btn-danger" id="confirmDeleteBtn">
                     <i class="fas fa-trash-alt"></i> Eliminar Proyecto
                 </button>
@@ -209,8 +206,8 @@
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="academicTutor" class="required">Tutor Académico</label>
-                                <input type="text" class="form-control" id="academicTutor" placeholder="Nombre del tutor académico" required>
+                                <label for="academicTutor">Tutor Académico (Opcional)</label>
+                                <input type="text" class="form-control" id="academicTutor" placeholder="Nombre del tutor académico">
                             </div>
                             
                             <div class="form-group">
@@ -225,6 +222,7 @@
                                 <select class="form-control" id="projectPeriod" required>
                                     <option value="">Seleccione un periodo</option>
                                     <option value="2025-I">2025-I</option>
+                                    <option value="2025-II">2025-II</option>
                                     <option value="2024-II">2024-II</option>
                                     <option value="2024-I">2024-I</option>
                                     <option value="2023-II">2023-II</option>
@@ -324,10 +322,13 @@
                     <button class="btn btn-outline" id="prevStepBtn" style="display: none;">
                         <i class="fas fa-arrow-left"></i> Anterior
                     </button>
+
                     <button class="btn btn-outline" id="cancelProjectBtn">Cancelar</button>
+
                     <button class="btn btn-primary" id="nextStepBtn">
                         Siguiente <i class="fas fa-arrow-right"></i>
                     </button>
+
                     <button class="btn btn-primary" id="saveProjectBtn" style="display: none;">
                         <i class="fas fa-save"></i> Guardar Proyecto
                     </button>
